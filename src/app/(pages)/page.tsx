@@ -46,7 +46,7 @@ export default function Home() {
           <span className="text-green-600">현대인 기사님!</span>
         </h1>
         <p className="text-lg text-gray-600 leading-relaxed">
-          점검하고자 하는 장비를 선택해주세요ㄹㅇㅎㄹㅇ
+          점검하고자 하는 장비를 선택해주세요
         </p>
       </div>
 
