@@ -1,16 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: 'HD현대건설기계 장비 체크리스트',
@@ -28,11 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="bg-gray-100">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-2xl mx-auto`}
-      >
-        {children}
-      </body>
+      <body className="antialiased max-w-2xl mx-auto">{children}</body>
     </html>
   );
 }
