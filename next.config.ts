@@ -1,14 +1,14 @@
 import type { NextConfig } from 'next';
 
-const repo = 'hyundice-cheklist';
-
 const nextConfig: NextConfig = {
-  output: 'export',
-  distDir: 'out',
-  trailingSlash: true,
-  images: { unoptimized: true },
-  basePath: `/${repo}`,
-  assetPrefix: `/${repo}/`,
+  // ❌ static export 제거
+  // output: 'export',
+  // distDir: 'out',  ← Vercel이 자동 관리
+  trailingSlash: false,
+  images: {
+    unoptimized: false, // ✅ Vercel의 이미지 최적화 기능 사용
+  },
+  reactStrictMode: true,
 };
 
 export default nextConfig;
