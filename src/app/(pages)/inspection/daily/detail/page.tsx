@@ -75,13 +75,14 @@ export default function InspectionDetailPage() {
         <div className="space-y-2">
           <h2 className="text-lg font-bold text-gray-800">참고 메뉴얼</h2>
           <div
-            className="bg-gray-100 rounded-xl border border-gray-200 aspect-video flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity"
+            className="bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-center overflow-hidden relative cursor-pointer hover:opacity-90 transition-opacity"
             onClick={() => setIsImageModalOpen(true)}
           >
             <Image
-              src="/001.png"
-              fill
-              style={{ objectFit: 'cover' }}
+              src="/detail1.jpg"
+              width={0}
+              height={0}
+              style={{ width: '100%', height: 'auto' }}
               className="rounded-2xl"
               sizes="(max-width: 768px) 100vw, 600px"
               priority
@@ -118,7 +119,7 @@ export default function InspectionDetailPage() {
               </button>
               <div className="relative w-full h-full max-w-4xl max-h-[90vh]">
                 <Image
-                  src="/001.png"
+                  src="/detail1.jpg"
                   fill
                   style={{ objectFit: 'contain' }}
                   sizes="100vw"

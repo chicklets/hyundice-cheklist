@@ -28,11 +28,11 @@ export default function Home() {
             />
           </svg>
         </button>
-        <h1 className="text-2xl font-bold text-gray-800">HX200AL</h1>
+        <h1 className="text-2xl font-bold text-gray-800">HX200A</h1>
       </div>
       <div className="pt-4 pb-6 space-y-4">
         <h1 className="text-3xl font-bold text-gray-800 mt-8">
-          HX200AL을
+          HX200A을
           <br />
           <span className="text-green-600">점검하실 건가요?</span>
         </h1>

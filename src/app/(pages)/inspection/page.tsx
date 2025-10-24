@@ -28,7 +28,7 @@ export default function InspectionPage() {
             />
           </svg>
         </button>
-        <h1 className="text-2xl font-bold text-gray-800">HX200AL</h1>
+        <h1 className="text-2xl font-bold text-gray-800">HX200A</h1>
       </div>
       <div className="pt-8 space-y-4">
         <h1 className="text-3xl font-bold text-gray-800 leading-relaxed">
@@ -57,6 +57,18 @@ export default function InspectionPage() {
 
         <div className="w-full py-4 px-8 bg-green-100 hover:bg-green-50 rounded-lg text-center font-semibold text-xl text-green-600 hover:text-green-700 transition-all duration-200 hover:shadow-lg bo hover:border-green-400 active:scale-95">
           500시간 점검
+        </div>
+
+        <div className="w-full py-4 px-8 bg-green-100 hover:bg-green-50 rounded-lg text-center font-semibold text-xl text-green-600 hover:text-green-700 transition-all duration-200 hover:shadow-lg bo hover:border-green-400 active:scale-95">
+          1000시간 점검
+        </div>
+
+        <div className="w-full py-4 px-8 bg-green-100 hover:bg-green-50 rounded-lg text-center font-semibold text-xl text-green-600 hover:text-green-700 transition-all duration-200 hover:shadow-lg bo hover:border-green-400 active:scale-95">
+          2000시간 점검
+        </div>
+
+        <div className="w-full py-4 px-8 bg-green-100 hover:bg-green-50 rounded-lg text-center font-semibold text-xl text-green-600 hover:text-green-700 transition-all duration-200 hover:shadow-lg bo hover:border-green-400 active:scale-95">
+          필요 시
         </div>
       </div>
     </div>

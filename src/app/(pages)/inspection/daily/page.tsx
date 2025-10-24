@@ -4,68 +4,57 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 interface ChecklistItem {
-  id: string;
+  id: number;
   name: string;
-  category: string;
+  referencePage: string;
   completed: boolean;
+  detailLink: string;
 }
 
 export default function DailyInspectionPage() {
   const router = useRouter();
   const [items, setItems] = useState<ChecklistItem[]>([
     {
-      id: '1',
+      id: 1,
       name: '작동유 레벨',
-      category: '점검, 보충',
+      referencePage: '6-34',
       completed: false,
+      detailLink: '/inspection/daily/detail',
     },
     {
-      id: '2',
+      id: 2,
       name: '엔진오일 레벨',
-      category: '점검, 보충',
+      referencePage: '6-18, 19',
       completed: false,
+      detailLink: '/inspection/daily/detail2',
     },
     {
-      id: '3',
-      name: '라디에터 냉각수',
-      category: '점검, 보충',
+      id: 3,
+      name: '라디에이터 냉각수',
+      referencePage: '6-20,21,22,23',
       completed: false,
+      detailLink: '/inspection/daily/detail',
     },
     {
-      id: '4',
+      id: 4,
       name: '프리필터 (배수, 엘리먼트)',
-      category: '점검, 청소',
+      referencePage: '6-27',
       completed: false,
+      detailLink: '/inspection/daily/detail2',
     },
     {
-      id: '5',
+      id: 5,
       name: '펜 벨트 장력 및 손상',
-      category: '점검, 보충',
+      referencePage: '-',
       completed: false,
+      detailLink: '/inspection/daily/detail',
     },
     {
-      id: '6',
+      id: 6,
       name: '연료탱크',
-      category: '점검, 급유',
+      referencePage: '6-27',
       completed: false,
-    },
-    {
-      id: '7',
-      name: '요소수 탱크',
-      category: '점검, 보충',
-      completed: false,
-    },
-    {
-      id: '8',
-      name: '핀 벨트 장력, 손상',
-      category: '점검, 보충',
-      completed: false,
-    },
-    {
-      id: '9',
-      name: '요소수 탱크',
-      category: '점검, 보충',
-      completed: false,
+      detailLink: '/inspection/daily/detail2',
     },
   ]);
 
@@ -73,7 +62,7 @@ export default function DailyInspectionPage() {
   const totalCount = items.length;
   const percentage = Math.round((completedCount / totalCount) * 100);
 
-  const toggleItem = (id: string) => {
+  const toggleItem = (id: number) => {
     setItems(
       items.map((item) =>
         item.id === id ? { ...item, completed: !item.completed } : item
@@ -161,24 +150,23 @@ export default function DailyInspectionPage() {
           <div className="text-xl p-5 font-bold">✓ 체크리스트</div>
 
           {/* Table Header */}
-          {/* <div className="grid grid-cols-12 gap-3 px-4 py-4 bg-gray-50/80 text-md font-semibold text-gray-600">
-            <div className="col-span-9">점검항목</div>
-            <div className="col-span-3 text-center">확인</div>
-          </div> */}
+          <div className="grid grid-cols-12 gap-3 px-4 py-4 bg-gray-50/80 text-md font-semibold text-gray-600">
+            <div className="col-span-6">점검 항목</div>
+            <div className="col-span-4 text-center">참고 페이지</div>
+            <div className="col-span-2 text-center">체크</div>
+          </div>
 
           {/* Items */}
           <div className="divide-y divide-gray-100">
             {items.map((item, index) => (
               <div
                 key={item.id}
-                className={`grid grid-cols-12 gap-3 items-center text-md transition-colors ${
+                className={`grid grid-cols-12 gap-3 px-4 items-center text-md transition-colors cursor-pointer ${
                   index % 2 === 0 ? 'bg-white' : 'bg-gray-50/30'
                 } hover:bg-green-50/50`}
+                onClick={() => router.push(item.detailLink)}
               >
-                <div
-                  className="col-span-9 px-6 py-4 cursor-pointer"
-                  onClick={() => router.push(`/inspection/daily/detail`)}
-                >
+                <div className="col-span-6 py-4">
                   <span
                     className={`font-medium transition-all text-md ${
                       item.completed
@@ -189,7 +177,17 @@ export default function DailyInspectionPage() {
                     {item.name}
                   </span>
                 </div>
-                <label className="col-span-3 px-4 py-4 flex justify-center items-center cursor-pointer group">
+                <div className="col-span-4 px-2 py-4 text-center">
+                  <span className="text-sm text-blue-600 font-medium">
+                    {item.referencePage}
+                  </span>
+                </div>
+                <label
+                  className="col-span-2 px-4 py-4 flex justify-center items-center cursor-pointer group"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                >
                   <div className="relative">
                     <input
                       type="checkbox"
@@ -225,6 +223,19 @@ export default function DailyInspectionPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Save Button */}
+        <div className="px-6 py-6">
+          <button
+            onClick={() => {
+              // 저장 로직 (현재는 알림만 표시)
+              alert('점검 결과가 저장되었습니다.');
+            }}
+            className="w-full bg-[#22C55E] text-white py-4 rounded-xl text-lg font-semibold hover:bg-green-600 transition-colors shadow-lg"
+          >
+            저장하기
+          </button>
         </div>
       </div>
     </div>

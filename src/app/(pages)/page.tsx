@@ -5,8 +5,8 @@ import Image from 'next/image';
 const equipmentList = [
   {
     id: 1,
-    name: 'HX220AL',
-    model: '굴착기',
+    name: 'HX220A',
+    model: '분류: 굴착기 (중형)',
     serialNumber: 'HNKPC12345',
     image: '/HX220A.jpg',
     lastInspection: '2025.10.10',
@@ -14,7 +14,7 @@ const equipmentList = [
   {
     id: 2,
     name: 'HX320A',
-    model: '굴착기',
+    model: '분류: 굴착기 (대형)',
     serialNumber: 'HNKPC12346',
     image: '/HX320A.jpg',
     lastInspection: '2025.10.5',
@@ -22,7 +22,7 @@ const equipmentList = [
   {
     id: 3,
     name: 'HL940A',
-    model: '휠 로더',
+    model: '분류: 휠 로더',
     serialNumber: 'HNKPC12347',
     image: '/HL940A.jpg',
     lastInspection: '2025.09.05',
