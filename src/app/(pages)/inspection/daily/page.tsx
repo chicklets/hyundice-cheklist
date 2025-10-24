@@ -24,7 +24,7 @@ export default function DailyInspectionPage() {
     {
       id: 2,
       name: '엔진오일 레벨',
-      referencePage: '6-18, 19',
+      referencePage: '6-18,19',
       completed: false,
       detailLink: '/inspection/daily/detail2',
     },
